@@ -1,0 +1,1 @@
+export const RECEIVE_TQ = 'receive_tq' // 获取天气数据

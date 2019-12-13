@@ -5,8 +5,15 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
-  name: "layout"
+  name: "layout",
+  mounted() {
+    this.getTq()
+  },
+  methods: {
+    ...mapActions(['getTq'])
+  },
 };
 </script>
 

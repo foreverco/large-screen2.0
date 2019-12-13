@@ -31,15 +31,10 @@ export default {
     ...mapState(['tqObj'])
   },
   mounted() {
-    this.getTq()
     setInterval(() => {
       this.datetime = new Date();
     }, 1000);
   },
-  methods: {
-    ...mapActions(['getTq']),
-    
-  }
 };
 </script>
 <style scoped>

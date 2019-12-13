@@ -21,6 +21,10 @@ import SvgIcon from '~/components/common/SvgIcon'
 // register globally
 Vue.component('svg-icon', SvgIcon)
 
+// 引入echarts
+// import echarts from 'echarts'
+// Vue.prototype.$echarts = echarts
+
 // 时间插件Moment
 import Moment from 'moment';
 // 设置日期语言

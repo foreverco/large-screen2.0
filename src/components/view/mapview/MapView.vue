@@ -17,7 +17,8 @@
 	import OSM from "ol/source/OSM";
 	import OLCesium from 'olcs/OLCesium.js';
 
-	import Header from '../Header'
+	// import Header from '../Header'
+	import Header from '../header/Header'
 	export default {
 		data() {
 			return {

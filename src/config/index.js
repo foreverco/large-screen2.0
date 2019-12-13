@@ -2,7 +2,6 @@
  * 项目统一配置项
  */
 
-
 const config = {
     //项目名
     project_name : '大数据指挥中心',
@@ -33,3 +32,4 @@ const config = {
 }
 
 export default config
+

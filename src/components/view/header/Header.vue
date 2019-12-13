@@ -5,15 +5,21 @@
         class='dateBox'
         v-if='dateShow'
       >
-        <p>{{datetime | comverTime('YYYY/MM/DD HH:mm:ss dddd')}} 30℃ 多云</p>
+        <p>{{datetime | comverTime('YYYY/MM/DD HH:mm:ss dddd')}} {{tqObj.now.tmp}}℃ {{tqObj.now.cond_txt}}</p>
       </div>
     </div>
     <div class='headerSlot'>
-      <ul class='headerList' v-if='navisShow'>
-        <li v-for="(navList, index) in navLists" :key="index">
-        <router-link :to='{path:navList.pathBtn}'>
-          <span :class='$route.path===navList.pathBtn?"activeNav":""'>{{navList.name}}</span>
-        </router-link>
+      <ul
+        class='headerList'
+        v-if='navisShow'
+      >
+        <li
+          v-for="(navList, index) in navLists"
+          :key="index"
+        >
+          <router-link :to='{path:navList.pathBtn}'>
+            <span :class='$route.path===navList.pathBtn?"activeNav":""'>{{navList.name}}</span>
+          </router-link>
         </li>
       </ul>
       <div class='headerTitle'>
@@ -21,7 +27,10 @@
       </div>
     </div>
     <div class='headerSlot'>
-      <div class='btnBox' v-if='btnShow'>
+      <div
+        class='btnBox'
+        v-if='btnShow'
+      >
         <router-link to='/view/userHome'>
           <p>◀ 返回首页</p>
         </router-link>
@@ -31,14 +40,15 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   props: {
     isShow: {
       type: Boolean
-    },
-    // isActive:{
-    //   type:String
-    // }
+    }
+  },
+  computed: {
+    ...mapState(['tqObj'])
   },
   data() {
     return {
@@ -46,16 +56,16 @@ export default {
       navisShow: false,
       dateShow: false,
       btnShow: false,
-      myActive:'',
+      myActive: "",
       navLists: [
-        {name: "警情研判",pathBtn:'/view/Warning'},
-        {name: "交通大数据",pathBtn:'/view/Trafic' },
-        {name: "治安大数据",pathBtn:'/view/Security' },
-        {name: "情报舆情",pathBtn:'/view/PublicMsg' },
-        {name: "常态监控",pathBtn:'/view/NormalState' },
-        {name: "应急处置",pathBtn:'/view/NormalState' },
-        {name: "区域安保",pathBtn:'/view/NormalState' },
-        {name: "视频监控",pathBtn:'/view/NormalState' }
+        { name: "警情研判", pathBtn: `/${this.$config.view.route_pre}/Warning` },
+        { name: "交通大数据", pathBtn: `/${this.$config.view.route_pre}/Trafic` },
+        { name: "治安大数据", pathBtn: `/${this.$config.view.route_pre}/Security` },
+        { name: "情报舆情", pathBtn: `/${this.$config.view.route_pre}/PublicMsg` },
+        { name: "常态监控", pathBtn: `/${this.$config.view.route_pre}/NormalState` },
+        { name: "应急处置", pathBtn: `/${this.$config.view.route_pre}/NormalState` },
+        { name: "区域安保", pathBtn: `/${this.$config.view.route_pre}/NormalState` },
+        { name: "视频监控", pathBtn: `/${this.$config.view.route_pre}/NormalState` }
       ]
     };
   },
@@ -66,16 +76,17 @@ export default {
     this.btnShow = this.isShow;
 
     setInterval(() => {
+      setTimeout(()=>{
       this.datetime = new Date();
+
+      })
     }, 1000);
   },
   // created() {
   //   console.log(this.$route)
   // },
-  
-  methods: {
-   
-  },
+
+  methods: {}
 };
 </script>
 <style scoped>
@@ -102,7 +113,7 @@ export default {
   width: 40%;
   position: relative;
   position: absolute;
-  background: url("../../assets/view/img/userHome/title.png") no-repeat;
+  background: url("./img/title.png") no-repeat;
   background-size: 100% 100%;
 }
 .headerSlot .headerTitle span {
@@ -139,14 +150,14 @@ export default {
 .headerSlot .headerList li:nth-child(8) {
   float: right;
 }
-.headerSlot .headerList li span:hover{
-    background: url("../../assets/view/img/navActive.png") no-repeat !important;
+.headerSlot .headerList li span:hover {
+  background: url("./img/navActive.png") no-repeat !important;
   background-size: 100% 100% !important;
   color: white;
 }
 .headerSlot .headerList li span {
   display: inline-block;
-  background: url("../../assets/view/img/nav.png") no-repeat;
+  background: url("./img/nav.png") no-repeat;
   background-size: 100% 100%;
   height: 1vw;
   line-height: 1vw;
@@ -154,10 +165,9 @@ export default {
   font-size: 0.5vw;
   color: #46d2d3;
   font-family: "lv";
-
 }
 .activeNav {
-  background: url("../../assets/view/img/navActive.png") no-repeat !important;
+  background: url("./img/navActive.png") no-repeat !important;
   background-size: 100% 100% !important;
   color: white !important;
 }

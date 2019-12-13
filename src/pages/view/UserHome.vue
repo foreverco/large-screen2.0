@@ -17,7 +17,7 @@
 
 <script>
 
-import Header from "~/components/view/Header.vue";
+import Header from "~/components/view/header/Header.vue";
 import {BtnMsg,TimeMsg,TitleMsg} from "~/components/view/userHomeComponents";
 export default {
   components: {

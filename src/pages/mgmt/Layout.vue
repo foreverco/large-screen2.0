@@ -86,5 +86,7 @@
 
 <style lang="scss">
     @import "../../assets/mgmt/style/index.scss";
+ 
+
     
 </style>

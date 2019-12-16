@@ -214,7 +214,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$refs);
+    // console.log(this.$refs);
     let myEcharts = echarts.init(this.$refs.chart);
     let option = this.option;
     // myChart.setOption(option)

@@ -70,6 +70,7 @@ export default {
     };
   },
   mounted() {
+    console.log(333)
     console.log(this.isShow);
     this.navisShow = this.isShow;
     this.dateShow = this.isShow;

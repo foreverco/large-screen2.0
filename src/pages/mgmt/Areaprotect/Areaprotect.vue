@@ -1,6 +1,6 @@
 <template>
   <div class='area'>
-      <MapView></MapView>
+      <MapView :headershow='headershow'></MapView>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import MapView from '../../../components/view/mapview/MapView'
 export default {
   data () {
     return {
+      headershow:false
     };
   },
   components:{
